@@ -26,7 +26,7 @@ def uppload_image ():
 
     config = load_config()
     
-    client = OpenAI(api_key=config['secret_key'])
+    client = OpenAI(api_key=config['apk'])
     
     response = client.chat.completions.create(
       model="gpt-4-vision-preview",
