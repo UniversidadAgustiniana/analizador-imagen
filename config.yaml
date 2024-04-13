@@ -1,16 +1,22 @@
-name: Run pytohn script
+# name: Run pytohn script
+# on:
+#   workflow_dispatch:
+# env:
+#   # Setting an environment variable with the value of a configuration variable
+#   # apk: ${{ vars.APk }}
+# apk: ${{ secrets.test }}
+
+# jobs:
+# run-python:  
+#   runs-on: ubuntu-latest
+#   steps:
+#   - name: Run pytohn script
+#     run: |
+#       pip install requests
+#       python app.py
+
 on:
   workflow_dispatch:
 env:
   # Setting an environment variable with the value of a configuration variable
-  # apk: ${{ vars.APk }}
-apk: ${{ secrets.test }}
-
-jobs:
-run-python:  
-  runs-on: ubuntu-latest
-  steps:
-  - name: Run pytohn script
-    run: |
-      pip install requests
-      python app.py
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
