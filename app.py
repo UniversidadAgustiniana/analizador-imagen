@@ -25,11 +25,11 @@ def get_image_list ():
 def uppload_image ():
     request_body = json.loads(request.data)
 
-    env_file = os.getenv("GITHUB_ENV")
-    return str(env_file)
+    # env_file = os.getenv("GITHUB_ENV")
+    # return str(env_file)
 
     # config = load_config()
-    # return os.environ["env_var"]
+    return os.environ["env_var"]
     client = OpenAI(api_key=config['apk'])
     
     response = client.chat.completions.create(
