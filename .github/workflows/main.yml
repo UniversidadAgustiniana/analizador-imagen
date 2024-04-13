@@ -12,7 +12,6 @@ jobs:
     steps:
       - name: "Say Hello Mona, it's Monday"
         run: |
-          echo "variable from shell environment : $env_var1"
           env:
             env_var: $env_var1
             echo "variable from shell environment : $env_var"
