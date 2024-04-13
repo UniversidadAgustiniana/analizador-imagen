@@ -3,4 +3,25 @@ on:
   workflow_dispatch:
 env:
   # Setting an environment variable with the value of a configuration variable
-  env_var: ${{ vars.RUNNER_NAME }}
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Run python script
+        run: |
+          pip install Flask
+          pip install OpenAI
+          pip install CORS
+          pip install -U flask-cors
+          python app.py

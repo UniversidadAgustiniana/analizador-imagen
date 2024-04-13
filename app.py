@@ -1,7 +1,7 @@
 from flask import Flask, request, json, render_template
 from openai import OpenAI
 from flask_cors import CORS
-import yaml
+# import yaml
 import os
 
 app = Flask(__name__)
@@ -75,10 +75,10 @@ def uppload_image ():
     return response.choices[0].message.content
     
 
-def load_config():
-    with open("config.yaml", 'r') as stream:
-        config = yaml.safe_load(stream)
-    return config
+# def load_config():
+#     with open("config.yaml", 'r') as stream:
+#         config = yaml.safe_load(stream)
+#     return config
 
 
 
