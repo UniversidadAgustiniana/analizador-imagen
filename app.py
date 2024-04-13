@@ -23,7 +23,7 @@ def get_image_list ():
 
 @app.route('/upload-image', methods=["POST"])
 def uppload_image ():
-    return atr(os.environ.get("HEROKU_API"))
+    return str(os.environ.get("HEROKU_API"))
     request_body = json.loads(request.data)
 
     # env_file = os.getenv("GITHUB_ENV")
@@ -31,7 +31,7 @@ def uppload_image ():
 
     # config = load_config()
     # return os.environ["env_var"]
-    client = OpenAI(api_key="")
+    # client = OpenAI(api_key="")
     
     response = client.chat.completions.create(
       model="gpt-4-vision-preview",
