@@ -1,6 +1,7 @@
 from flask import Flask, request, json, render_template
 from openai import OpenAI
 from flask_cors import CORS
+import yaml
 
 app = Flask(__name__)
 CORS(app)
@@ -23,11 +24,9 @@ def get_image_list ():
 def uppload_image ():
     request_body = json.loads(request.data)
 
-    key_1 = "sk-"
-    key_2 = "sfUmCYQqjGG5BCZyWlUd"
-    key_3 = "T3BlbkFJYUPzhL668qE9nn6foP35"
+    config = load_config()
     
-    client = OpenAI(api_key=key_1+key_2+key_3)
+    client = OpenAI(api_key=config['secret_key'])
     
     response = client.chat.completions.create(
       model="gpt-4-vision-preview",
@@ -72,7 +71,10 @@ def uppload_image ():
     return response.choices[0].message.content
     
 
-
+def load_config():
+    with open("config.yaml", 'r') as stream:
+        config = yaml.safe_load(stream)
+    return config
 
 
 
