@@ -4,3 +4,13 @@ on:
 env:
   # Setting an environment variable with the value of a configuration variable
   env_var: ${{ vars.ENV_CONTEXT_VAR }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Say Hello Mona, it's Monday"
+        run: echo "Today is"
+        env:
+          env_var: ${{ vars.ENV_CONTEXT_VAR }}
