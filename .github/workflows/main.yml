@@ -12,6 +12,4 @@ jobs:
     steps:
       - name: "Say Hello Mona, it's Monday"
         run: |
-          echo "repository variable
-        env:
-          env_var: ${{ vars.ENV_CONTEXT_VAR }}
+          echo "repository variable"
