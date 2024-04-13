@@ -1,5 +1,15 @@
+name: Run pytohn script
 on:
   workflow_dispatch:
 env:
   # Setting an environment variable with the value of a configuration variable
   apk: ${{ vars.APk }}
+
+jobs:
+run-python:  
+  runs-on: ubuntu-latest
+  steps:
+  - name: Run pytohn script
+    run: |
+      pip install requests
+      python app.py
