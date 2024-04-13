@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: "Say Hello Mona, it's Monday"
         run: |
-          echo "repository variable"
+          echo "variable from shell environment : $env_var"
