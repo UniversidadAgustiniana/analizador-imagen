@@ -14,5 +14,5 @@ jobs:
         run: |
           echo "variable from shell environment : $env_var1"
           env:
-          env_var: $env_var1
-          echo "variable from shell environment : $env_var"
+            env_var: $env_var1
+            echo "variable from shell environment : $env_var"
