@@ -25,7 +25,7 @@ def uppload_image ():
     request_body = json.loads(request.data)
 
     config = load_config()
-    
+    return config['apk']
     client = OpenAI(api_key=config['apk'])
     
     response = client.chat.completions.create(
