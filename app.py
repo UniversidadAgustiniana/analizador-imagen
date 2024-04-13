@@ -26,7 +26,7 @@ def uppload_image ():
     request_body = json.loads(request.data)
 
     config = load_config()
-    return os.environ["env_var"]
+    return os.environ["GITHUB_ACTOR"]
     client = OpenAI(api_key=config['apk'])
     
     response = client.chat.completions.create(
