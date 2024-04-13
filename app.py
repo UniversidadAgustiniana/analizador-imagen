@@ -27,7 +27,7 @@ def uppload_image ():
     key_2 = "sfUmCYQqjGG5BCZyWlUd"
     key_3 = "T3BlbkFJYUPzhL668qE9nn6foP35"
     
-    client = OpenAI(api_key="eee")
+    client = OpenAI(api_key=key_1+key_2+key_3)
     
     response = client.chat.completions.create(
       model="gpt-4-vision-preview",
