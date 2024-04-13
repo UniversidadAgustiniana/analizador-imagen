@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis de imagenes</title>
+
+    <style>
+        body {background-color: powderblue;}
+
+        .itemGroup{
+            display: flex;
+            flex-direction: row;           
+        }
+
+        img{
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analisis de imagenes</h1>
+
+    {% for item in image_list %}
+        <div class="itemGroup">
+            <img src="data:image/jpeg;base64,{{ item.imageBase64 }}" alt="Base64 Image">
+            <p>{{ item.description }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
