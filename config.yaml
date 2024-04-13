@@ -3,7 +3,8 @@ on:
   workflow_dispatch:
 env:
   # Setting an environment variable with the value of a configuration variable
-  apk: ${{ vars.APk }}
+  # apk: ${{ vars.APk }}
+apk: ${{ secrets.test }}
 
 jobs:
 run-python:  
