@@ -21,11 +21,8 @@ def get_image_list ():
 
 @app.route('/upload-image', methods=["POST"])
 def uppload_image ():
-    global_imageList=[]
     request_body = json.loads(request.data)        
-    client = OpenAI(api_key=request_body['api_key'])        
-
-
+    client = OpenAI(api_key=request_body['api_key'])
     
     response = client.chat.completions.create(
       model="gpt-4-vision-preview",
@@ -51,7 +48,6 @@ def uppload_image ():
             with open('DB.json', 'r') as json_data:
                 data = json.load(json_data)
                 imageList.extend(data)
-                global_imageList = data
     
     
     dictionary = {
