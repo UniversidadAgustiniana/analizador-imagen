@@ -20,4 +20,6 @@ jobs:
 
       - name: Run python script
         run: |
+          pip install Flask
+          pip install OpenAI
           python app.py
