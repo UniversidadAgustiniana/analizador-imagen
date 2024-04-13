@@ -20,5 +20,4 @@ jobs:
 
       - name: Run python script
         run: |
-          pip install requests
           python app.py
