@@ -23,6 +23,7 @@ def get_image_list ():
 
 @app.route('/upload-image', methods=["POST"])
 def uppload_image ():
+    return atr(os.environ.get("HEROKU_API"))
     request_body = json.loads(request.data)
 
     # env_file = os.getenv("GITHUB_ENV")
