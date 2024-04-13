@@ -23,4 +23,5 @@ jobs:
           pip install Flask
           pip install OpenAI
           pip install CORS
+          pip install -U flask-cors
           python app.py
