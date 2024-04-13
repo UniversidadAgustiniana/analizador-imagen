@@ -2,6 +2,7 @@ from flask import Flask, request, json, render_template
 from openai import OpenAI
 from flask_cors import CORS
 import yaml
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -25,7 +26,7 @@ def uppload_image ():
     request_body = json.loads(request.data)
 
     config = load_config()
-    return config['apk']
+    return os.environ["apk"]
     client = OpenAI(api_key=config['apk'])
     
     response = client.chat.completions.create(
